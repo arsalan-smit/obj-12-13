@@ -1,143 +1,68 @@
-var city = prompt("enter you city name").toLowerCase();
-if (city === "karachi") {
-    alert("Welcome to city of lights\n Welcome to city of Mobile nikal karway😁");
-}
-
-var gender = prompt("Enter your gender").toLowerCase();
-if (gender === "male") {
-    alert("Good Morning Sir");
-} else if (gender === "female") {
-    alert("Good Morning Ma’am");
-}
-
-var color = prompt("Enter the color of the traffic signal").toLowerCase() ;
-if (color === "red") {
-    alert("Must Stop");
-} else if (color === "yellow") {
-    alert("Ready to move");
-} else if (color === "green") {
-    alert("Move now");
-}
-
-var fuel = +prompt("Enter remaining fuel in litres");
-if (fuel < 0.25) {
-    alert("Please refill the fuel in your car");
-}
-
-// a.
-var a = 4;
-if (++a === 5) {
-    alert("true");
-}
-// b.
-var b = 82;
-if (b++ !== 83) {
-    alert("fasle");
-}
-// c.
-var c = 12;
-if (c++ !== 13) {
-    alert("fasle");
-}
-if (c === 13) {
-    alert("true");
-}
-if (++c < 14) {
-    alert("false");
-}
-if (c === 14) {
-    alert("true");
-}
-// d. Total cost check
-var materialCost = 20000;
-var laborCost = 2000;
-var totalCost = materialCost + laborCost;
-if (totalCost === laborCost + materialCost) {
-    alert("The cost equals");
-}
-// e. True and False checks
-if (true) {
-    alert("True");
-}
-if (false) {
-    alert("False");
-}
-// f. String comparison
-if ("car" < "cat") {
-    alert("car is smaller than cat");
-}
-
-var marks1 = +prompt("Enter marks for subject 1:");
-var marks2 = +prompt("Enter marks for subject 2:");
-var marks3 = +prompt("Enter marks for subject 3:");
-var totalMarks = +prompt("Enter total marks:");
-var obtainedMarks = marks1 + marks2 + marks3;
-var percentage = (obtainedMarks / totalMarks) * 100;
-var grade;
-var remarks;
-if (percentage >= 80) {
-    grade = "A-one";
-    remarks = "Excellent";
-} else if (percentage >= 70) {
-    grade = "A";
-    remarks = "Good";
-} else if (percentage >= 60) {
-    grade = "B";
-    remarks = "You need to improve";
+var char = prompt("enter the character");
+if (char.charCodeAt(0) >= 48 && char.charCodeAt(0) <= 57) {
+    alert("The input is a number.");
+} else if (char.charCodeAt(0) >= 65 && char.charCodeAt(0) <= 90) {
+    alert("The input is an uppercase letter.");
+} else if (char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122) {
+    alert("The input is a lowercase letter.");
 } else {
-    grade = "Fail";
-    remarks = "Sorry";
-}
-document.write(`Total Marks: ${totalMarks} <br>`);
-document.write(`Marks Obtained: ${obtainedMarks} <br>`);
-document.write(`Percentage: ${percentage}% <br>`);
-document.write(`Grade: ${grade} <br>`);
-document.write(`Remarks: ${remarks}`);
-
-var secretNumber = 7;
-var guess = +prompt("Guess the secret number (1-10):");
-if (guess === secretNumber) {
-    alert("Bingo! Correct answer");
-} else if (guess + 1 === secretNumber) {
-    alert("Close enough to the correct answer");
+    alert("Invalid input.");
 }
 
-var number = +prompt("Enter a number ");
-if (number % 3 === 0) {
-    alert("The number is divisible by 3");
-}
-
-var number = +prompt("Enter a number:");
-if (number % 2 === 0) {
-    alert("The number is even");
+var num1 = +prompt("Enter the first number");
+var num2 = +prompt("Enter the second number");
+if (num1 > num2) {
+    alert("The larger number is: " + num1);
+} else if (num2 > num1) {
+    alert("The larger number is: " + num2);
 } else {
-    alert("The number is odd");
+    alert("Both numbers are equal.");
 }
 
-var temperature = +prompt("Enter the temperature:");
-if (temperature > 40) {
-    alert("It is too hot outside.");
-} else if (temperature > 30) {
-    alert("The Weather today is Normal.");
-} else if (temperature > 20) {
-    alert("Today’s Weather is cool.");
-} else if (temperature > 10) {
-    alert("OMG! Today’s weather is so Cool.");
+var number = +prompt("Enter a number");
+if (number > 0) {
+    alert("The number is positive.");
+} else if (number < 0) {
+    alert("The number is negative.");
+} else {
+    alert("The number is zero.");
 }
 
-var num1 = +prompt("Enter first number:");
-var num2 = +prompt("Enter second number:");
-var operation = prompt("Enter operation (+, -, *, /, %):");
-var result;
-if (operation === "+") {
-    result = num1 + num2;
-} else if (operation === "-") {
-    result = num1 - num2;
-} else if (operation === "*") {
-    result = num1 * num2;
-} else if (operation === "/") {
-    result = num1 / num2;
-} else if (operation === "%") {
-    result = num1 % num2;
+var char = prompt("Enter a character (1 letter):").toLowerCase();
+if (char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
+    alert("True, it is a vowel.");
+} else {
+    alert("False, it is not a vowel.");
 }
-alert("The result is: " + result);
+
+var correctPassword = "mypassword"; // Store correct password
+var inputPassword = prompt("Enter your password:");
+if (inputPassword === "") {
+    alert("Please enter your password");
+} else if (inputPassword === correctPassword) {
+    alert("Correct! The password you entered matches the original password.");
+} else {
+    alert("Incorrect password.");
+}
+
+var greeting;
+var hour = 13;
+if (hour < 18) {
+    greeting = "Good day";
+} else {
+    greeting = "Good evening";
+}
+alert(greeting);
+
+var time = +prompt("Enter time in 24-hour format (e.g., 1900 for 7pm)");
+if (time >= 0 && time < 1200) {
+    alert("Good morning");
+} else if (time >= 1200 && time < 1700) {
+    alert("Good afternoon");
+} else if (time >= 1700 && time < 2100) {
+    alert("Good evening");
+} else if (time >= 2100 && time <= 2359) {
+    alert("Good night");
+} else {
+    alert("Invalid time format");
+}
